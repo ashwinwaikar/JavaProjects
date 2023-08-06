@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    ">
+
+	<!-- This is our bean configuration which will be read by the IOC -->
+
+	<!-- SIMPLE -->
+	<!-- <bean class="com.springcore.constructorinjection.Certificate" name="certi"> 
+		<constructor-arg value="Android using kotlin"></constructor-arg> </bean> 
+		<bean class="com.springcore.constructorinjection.Person" name="person"> <constructor-arg> 
+		<value>Ashwin Waikar</value> </constructor-arg> <constructor-arg value="1009" 
+		type="int" /> <constructor-arg ref="certi" /> <constructor-arg> <list> <value>ASW</value> 
+		<value>VAW</value> </list> </constructor-arg> </bean> -->
+
+
+
+	<!-- using c schema -->
+	<bean class="com.springcore.constructorinjection.Certificate"
+		name="certi" c:name="Allah talah">
+	</bean>
+	<bean class="com.springcore.constructorinjection.Person"
+		name="person" c:name="Ashwin Waikar" c:personId="1009" c:c-ref="certi"
+		c:lista="Ashu,Shyam,Waikar,Baba"></bean>
+</beans>

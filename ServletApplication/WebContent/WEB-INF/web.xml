@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app id="WebApp_ID">
+	<servlet>
+		<servlet-name>My</servlet-name>
+		<servlet-class>mypack.MyFirstServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MyGeneric</servlet-name>
+		<servlet-class>mypack.MyGeneric</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>HttpServlet</servlet-name>
+		<display-name>HttpServlet</display-name>
+		<description></description>
+		<servlet-class>mypack.HttpServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>My</servlet-name>
+		<url-pattern>/run</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MyGeneric</servlet-name>
+		<url-pattern>/MyGeneric</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HttpServlet</servlet-name>
+		<url-pattern>/HttpServlet</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

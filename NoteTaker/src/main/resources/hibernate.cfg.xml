@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/myhibernate</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+
+		<!-- Bhasha konsi use krnewale -->
+		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+		<!-- Automatic table creation/Update/Delete from Class whenever we run 
+			application -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!--To see automaticlly fired query by hibernate in console -->
+		<property name="show_sql">true</property>
+
+		<!-- To get a query in formated manner -->
+		<property name="format_sql">true</property>
+
+		<!-- Mapping class with hibernate ...1 mapping per class -->
+		<mapping class="com.entities.Note" />
+
+
+
+	</session-factory>
+</hibernate-configuration>
