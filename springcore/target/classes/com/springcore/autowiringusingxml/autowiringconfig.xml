@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    ">
+
+	<!-- This is our bean configuration which will be read by the IOC -->
+
+	<bean class="com.springcore.autowiringusingxml.Address"
+		name="address">
+		<property name="street" value="sakoli street"></property>
+		<property name="city" value="lakhani"></property>
+	</bean>
+
+	<bean class="com.springcore.autowiringusingxml.Address"
+		name="address2">
+		<property name="street" value="masala street"></property>
+		<property name="city" value="Madras"></property>
+	</bean>
+
+	<bean class="com.springcore.autowiringusingxml.Employee"
+		name="emp1" autowire="byName">
+	</bean>
+
+	<!-- <bean class="com.springcore.autowiringusingxml.Employee" name="emp1" 
+		autowire="byType"> </bean> -->
+
+	<!-- <bean class="com.springcore.autowiringusingxml.Employee" name="emp1" 
+		autowire="constructor"> </bean> -->
+</beans>
