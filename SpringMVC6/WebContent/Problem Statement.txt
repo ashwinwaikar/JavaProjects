@@ -1,0 +1,28 @@
+Entity
+Note:- Use HibernateTemplate for this assignment and DAO design pattern.
+
+Product
+	int pid  primary key
+	pname String
+	price double
+	qty   int
+
+
+Home.jsp
+	two links
+
+	add product
+	view product
+
+when u click on "add product" link , it should take u to 
+"Add.jsp" which will accept pname, price and qty.
+on submit , record should be entered in "product" table and control should go back to "Home.jsp".
+
+when u click on "view products" link, it should take u to "View.jsp" which will display all the products from "product" table.
+
+Use DAO
+
+ProductDAO
+	void add(Product);
+	List<?> getProducts();
+

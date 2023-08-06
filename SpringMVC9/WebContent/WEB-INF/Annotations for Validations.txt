@@ -1,0 +1,13 @@
+for uname
+
+@NotEmpty(message="name can not be empty")
+	@Pattern(regexp = "^[a-zA-Z]+$", message = "name must contain characters")
+	@Size(max = 6)
+
+
+
+for password
+
+@NotEmpty(message="password can not be empty")
+	@Pattern(regexp = "^[A-Za-z]+[0-9]+$", message = "password must contain characters as well as digits")
+	@Size(min=4,max = 7)	

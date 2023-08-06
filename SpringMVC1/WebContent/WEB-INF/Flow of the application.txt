@@ -1,0 +1,46 @@
+we have set welcome file as "/book.do"
+
+DispatcherServlet will check which controller has got a "@GetMapping" method as "book". [this name has to be unique ]
+
+we have "BookController" which is having 
+
+@Controller
+
+public class BookNewController
+once DispatcherServlet gets the controller which has  "@GetMapping" method for "book" , it will invoke that method 
+
+	@GetMapping("book")
+	public ModelAndView before()
+	{
+		Book defaultBook=new Book();
+return new ModelAndView("bookNew","mybook",defaultBook);
+	}
+
+this method 
+a) creates instance of "Book"
+b) creates ModelAndView which consists of
+	(i) "bookNew" name of the jsp to which DispatcherServlet will forward the request.
+	(ii) stores instance of Book inside ModelAndView by the name "mybook" so that jsp in which we are going to create a form will use it.( by "modelAttribute")
+
+DispatcherServlet forwards the request to "bookNew.jsp" which creates a form using "modelAttribute" as "mybook".
+
+inside form we have mentioned "path" for textfield so that when submit button is clicked , DispatcherServlet" will 
+1) instantiate "Book" class and invoke setter methods for the matching "path" names.
+2) pass that Book class instance to the controller method which has  "@PostMapping("book")
+	
+	@PostMapping("book")
+	public String afterSubmit(
+		@ModelAttribute("mb") Book book) 
+	{
+		return "success";
+	}
+
+
+this method saves Book class instance given by jsp inside request attribute by the name "mb".
+( @ModelAttribute("mb") is same as request.setAttribute("mb",book).
+
+"return success" means DispatcherServlet will forward the request to "success.jsp" which will access "mb". 
+
+
+
+

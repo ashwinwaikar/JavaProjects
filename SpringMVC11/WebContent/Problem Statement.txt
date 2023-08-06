@@ -1,0 +1,16 @@
+Person class with
+name,address and age
+toString() method.
+
+create a form in jsp "person.jsp" which will accept name,address and age and on submit control will go to PostMapping
+ method of controller class, which with the help of service layer and DAO layer persist it inside the database.
+
+ "PersonController" with "@GetMapping" and "@PostMapping" methods.
+
+	PersonDAO
+		void add(Person ref);
+	PersonDAOImpl
+
+	PersonManager
+		void add(Person ref);
+	PersonManagerImpl
